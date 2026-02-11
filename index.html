@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Product Management System with CRUD operations and LocalStorage">
+    <title>CRUDS - Product Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CRUDS</h1>
+            <p class="subtitle">Product Management System</p>
+        </header>
+
+        <main>
+            <!-- Product Input Form -->
+            <section class="input-section">
+                <h2>Product Details</h2>
+                <form id="productForm">
+                    <div class="form-group">
+                        <input type="text" id="title" placeholder="Product Name" required>
+                    </div>
+
+                    <div class="price-grid">
+                        <div class="form-group">
+                            <input type="number" id="price" placeholder="Price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="taxes" placeholder="Taxes" step="0.01" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="ads" placeholder="Ads" step="0.01" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="discount" placeholder="Discount" step="0.01" min="0" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="total" id="total">Total: $0.00</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" id="count" placeholder="Count" min="1" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="category" placeholder="Category" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" id="submitBtn" class="btn btn-primary">Create Product</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Search and Controls -->
+            <section class="search-section">
+                <div class="search-controls">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <div class="search-buttons">
+                        <button id="searchByTitle" class="btn btn-secondary">Search by Title</button>
+                        <button id="searchByCategory" class="btn btn-secondary">Search by Category</button>
+                    </div>
+                </div>
+                <button id="deleteAll" class="btn btn-danger">Delete All Products</button>
+            </section>
+
+            <!-- Products Display -->
+            <section class="display-section">
+                <h2>Products <span id="productCount">(0)</span></h2>
+                <div class="table-container">
+                    <table id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Taxes</th>
+                                <th>Ads</th>
+                                <th>Discount</th>
+                                <th>Total</th>
+                                <th>Count</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Products will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CRUDS - Product Management System</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
