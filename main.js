@@ -255,10 +255,5 @@ searchInput.addEventListener('input', () => {
     }
 });
 
-// Show/Hide Delete All button
-function toggleDeleteAllButton() {
-    deleteAllBtn.style.display = products.length > 0 ? 'block' : 'none';
-}
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', init);
